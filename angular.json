@@ -110,5 +110,7 @@
       }
     }
   },
-  "defaultProject": "crm"
+  "cli": {
+    "analytics": false
+  }
 }
