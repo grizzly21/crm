@@ -12,6 +12,7 @@ import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { SidebarMenuComponent } from './sidebar-menu/sidebar-menu.component';
 import { AuthModule } from './auth/auth.module';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -21,12 +22,8 @@ import { AuthModule } from './auth/auth.module';
   ],
   imports: [
     BrowserModule,
-    MenubarModule,
-    AutoCompleteModule,
-    FormsModule,
-    ButtonModule,
-    InputTextModule,
-    AuthModule
+    AuthModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent],
