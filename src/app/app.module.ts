@@ -10,16 +10,23 @@ import { AutoCompleteModule } from 'primeng/autocomplete';
 import { FormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
+import { SidebarMenuComponent } from './sidebar-menu/sidebar-menu.component';
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    SidebarMenuComponent
+  ],
   imports: [
     BrowserModule,
     MenubarModule,
     AutoCompleteModule,
     FormsModule,
     ButtonModule,
-    InputTextModule
+    InputTextModule,
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent],
