@@ -5,6 +5,11 @@
   box-sizing: border-box;
 }
 
+a{
+  cursor: pointer;
+  text-decoration: none;
+}
+
 body {
   background: rgb(244, 239, 251);
   background: linear-gradient(
