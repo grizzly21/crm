@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarMenuComponent implements OnInit {
 
+  sidebarToggle: boolean = true;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  sidebarToggleBtn(){
+    this.sidebarToggle =!this.sidebarToggle;
+    console.log(this.sidebarToggle)
+  }
 }
