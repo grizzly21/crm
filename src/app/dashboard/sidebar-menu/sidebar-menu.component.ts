@@ -1,21 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-sidebar-menu',
   templateUrl: './sidebar-menu.component.html',
   styleUrls: ['./sidebar-menu.component.scss']
 })
-export class SidebarMenuComponent implements OnInit {
+export class SidebarMenuComponent {
 
-  sidebarToggle: boolean = true;
+  @Input() toggle!: boolean;
+
+  sidebarToggle: boolean = false;
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
 
-  sidebarToggleBtn(){
-    this.sidebarToggle =!this.sidebarToggle;
-    console.log(this.sidebarToggle)
-  }
 }

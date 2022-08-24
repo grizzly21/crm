@@ -1,20 +1,35 @@
-<div class="sidebar" [ngClass]="sidebarToggle ? 'sidebar-open' : 'sidebar-close'">
-  <button class="sidebar-toggle" (click)="sidebarToggleBtn()">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      style="fill: rgba(0, 0, 0, 1); transform: ; msfilter: "
-    >
-      <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path>
-    </svg>
-  </button>
+<div
+  class="sidebar"
+  [ngClass]="toggle ? 'sidebar-open' : 'sidebar-close'"
+>
   <ul>
-    <li routerLink="#"><a href="#">Item</a></li>
-    <li routerLink="#"><a href="#">Item</a></li>
-    <li routerLink="#"><a href="#">Item</a></li>
-    <li routerLink="#"><a href="#">Item</a></li>
-    <li routerLink="#"><a href="#">Item</a></li>
-    <li routerLink="#"><a href="#">Item</a></li>
+    <li routerLink="#">
+      <i class="bx bx-bar-chart-alt-2 bx-sm"></i>
+      <a href="#">Показники</a>
+    </li>
+    <li routerLink="#">
+      <i class="bx bx-basket bx-sm"></i>
+      <a href="#">Товари</a>
+    </li>
+    <li routerLink="#">
+      <i class="bx bx-cart-download bx-sm"></i>
+      <a href="#">Закупки</a>
+    </li>
+    <li routerLink="#">
+      <i class="bx bx-user bx-sm"></i>
+      <a href="#">Контрагенти</a>
+    </li>
+    <li routerLink="#">
+      <i class="bx bx-cart bx-sm"></i>
+      <a href="#">Продажі</a>
+    </li>
+    <li routerLink="#">
+      <i class="bx bx-wallet-alt bx-sm"></i>
+      <a href="#">Гроші</a>
+    </li>
+    <li routerLink="#">
+      <i class="bx bx-task bx-sm"></i>
+      <a href="#">Завдання</a>
+    </li>
   </ul>
 </div>

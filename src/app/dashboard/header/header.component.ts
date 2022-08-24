@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { MenuItem } from 'primeng/api';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,10 +6,17 @@ import { MenuItem } from 'primeng/api';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
+
+  @Output() sideBarToggle = new EventEmitter<boolean>();
+  toggleEmit: boolean = false;
+
   constructor() {}
 
-  items!: MenuItem[];
-
   ngOnInit() {}
+
+  onMenuToggle(){
+    this.sideBarToggle.emit(!this.toggleEmit);
+    this.toggleEmit = !this.toggleEmit;
+  }
 
 }

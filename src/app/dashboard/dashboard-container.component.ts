@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardContainerComponent implements OnInit {
 
+  toogle: boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  toggleSidebar(event: boolean){
+    this.toogle = event;
   }
 
 }
