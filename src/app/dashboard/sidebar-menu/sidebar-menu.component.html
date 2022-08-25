@@ -1,33 +1,34 @@
-<div
-  class="sidebar"
-  [ngClass]="toggle ? 'sidebar-open' : 'sidebar-close'"
->
+<div class="sidebar" [ngClass]="toggle ? 'sidebar-open' : 'sidebar-close'">
+  <div class="logo">
+    <span>LOGO</span>
+  </div>
+  <hr>
   <ul>
-    <li routerLink="#">
+    <li routerLink="indicators">
       <i class="bx bx-bar-chart-alt-2 bx-sm"></i>
       <a href="#">Показники</a>
     </li>
-    <li routerLink="#">
+    <li routerLink="goods">
       <i class="bx bx-basket bx-sm"></i>
-      <a href="#">Товари</a>
+      <a>Товари</a>
     </li>
-    <li routerLink="#">
+    <li routerLink="purchases">
       <i class="bx bx-cart-download bx-sm"></i>
       <a href="#">Закупки</a>
     </li>
-    <li routerLink="#">
+    <li routerLink="contractors">
       <i class="bx bx-user bx-sm"></i>
       <a href="#">Контрагенти</a>
     </li>
-    <li routerLink="#">
+    <li routerLink="sales">
       <i class="bx bx-cart bx-sm"></i>
       <a href="#">Продажі</a>
     </li>
-    <li routerLink="#">
+    <li routerLink="money">
       <i class="bx bx-wallet-alt bx-sm"></i>
       <a href="#">Гроші</a>
     </li>
-    <li routerLink="#">
+    <li routerLink="tasks">
       <i class="bx bx-task bx-sm"></i>
       <a href="#">Завдання</a>
     </li>

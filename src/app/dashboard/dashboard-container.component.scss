@@ -5,6 +5,10 @@
   height: 100vh;
   width: calc(100% - 70px);
   transition: all .2s ease;
+
+  .second-container{
+    padding: 20px;
+  }
 }
 
 .open{
