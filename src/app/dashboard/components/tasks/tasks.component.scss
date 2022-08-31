@@ -1,0 +1,48 @@
+.tasks-header{
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  font-family: 'Rubik', sans-serif;
+
+  &-title{
+    margin-right: 10px;
+  }
+
+  button{
+    border: none;
+    height: 35px;
+    border-radius: 5px;
+    color: white;
+    background-color: #000;
+  }
+
+  &-btn-add{
+    width: 150px;
+  }
+
+  &-btn-filter{
+    width: 70px;
+  }
+
+  &-search{
+    width: 200px;
+    height: 35px;
+    padding-left: 8px;
+    padding-right: 8px;
+    border-radius: 5px;
+    border: 1px solid grey;
+    outline: none;
+  }
+}
+
+.tasks-filters{
+  width: 100%;
+  height: 70px;
+  background-color: lighten(gray, 40%);
+  border-radius: 5px;
+  margin-top: 15px;
+  display: flex;
+
+}
