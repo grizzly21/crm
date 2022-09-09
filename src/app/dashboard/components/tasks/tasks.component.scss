@@ -1,16 +1,15 @@
-.tasks-header{
+.tasks-header {
   height: 50px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   gap: 10px;
-  font-family: 'Rubik', sans-serif;
 
-  &-title{
+  &-title {
     margin-right: 10px;
   }
 
-  button{
+  button {
     border: none;
     height: 35px;
     border-radius: 5px;
@@ -18,15 +17,15 @@
     background-color: #000;
   }
 
-  &-btn-add{
+  &-btn-add {
     width: 150px;
   }
 
-  &-btn-filter{
+  &-btn-filter {
     width: 70px;
   }
 
-  &-search{
+  &-search {
     width: 200px;
     height: 35px;
     padding-left: 8px;
@@ -37,12 +36,148 @@
   }
 }
 
-.tasks-filters{
+.tasks-filters {
   width: 100%;
   height: 70px;
   background-color: lighten(gray, 40%);
   border-radius: 5px;
   margin-top: 15px;
+  padding-left: 20px;
   display: flex;
+  align-items: center;
+  gap: 10px;
 
+  button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: #000;
+  }
+
+  .filter-item {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+  }
+}
+
+button:hover {
+  cursor: pointer;
+  box-shadow: 1px 1px 3px grey;
+}
+
+.tasks-table {
+  width: 100%;
+
+  table {
+    width: 100%;
+    margin-top: 10px;
+
+    thead > tr > th {
+      border-bottom: 1px solid #000;
+      text-align: left;
+    }
+
+    th,
+    td {
+      padding: 8px;
+    }
+
+    tbody > tr {
+      &:hover {
+        cursor: pointer;
+        background-color: darken($color: #fff, $amount: 10%);
+      }
+    }
+  }
+}
+
+// Pop-up for adding tasks
+
+.add-task-pop-up {
+  position: absolute;
+  top: 0;
+  left: -80px;
+  width: calc(100% + 80px);
+  height: 100vh;
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1001;
+  background-color: rgba(150, 150, 150, 0.8);
+
+  .back-close {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 999;
+  }
+
+  .pop-up-container {
+    width: 100%;
+    height: 700px;
+    max-width: 550px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 1px 1px 5px lighten(#888, 10%);
+    z-index: 1000;
+  }
+
+  h2 {
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  form {
+    width: 100%;
+    padding: 40px;
+
+    .pop-up-input {
+      margin-bottom: 15px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+
+      label {
+        margin-left: 5px;
+      }
+
+      input,
+      textarea {
+        padding-left: 8px;
+        padding-right: 8px;
+        border-radius: 5px;
+        border: 1px solid grey;
+        outline: none;
+      }
+      textarea {
+        resize: none;
+        padding-top: 8px;
+      }
+
+      input {
+        height: 35px;
+      }
+    }
+
+    button {
+      margin-top: 40px;
+      width: 100%;
+      border: none;
+      height: 35px;
+      border-radius: 5px;
+      color: white;
+      background-color: #000;
+
+      &:disabled {
+        background-color: lighten(#000, 30%);
+      }
+    }
+  }
 }

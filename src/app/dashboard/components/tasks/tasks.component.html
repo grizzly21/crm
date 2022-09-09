@@ -1,12 +1,12 @@
 <div class="tasks-header">
   <h3 class="tasks-header-title">Завдання</h3>
-  <button class="tasks-header-btn-add">Добавити завдання</button>
-  <button class="tasks-header-btn-filter">Фільтр</button>
+  <button class="tasks-header-btn-add" (click)="onPopUpToggle()">Додати завдання</button>
+  <button class="tasks-header-btn-filter" (click)="onFilterToggle()">Фільтр</button>
   <input class="tasks-header-search" type="search" placeholder="Пошук у завданнях">
 </div>
-<div class="tasks-filters">
-  <button>find</button>
-  <button>clear</button>
+<div class="tasks-filters" *ngIf="filterToggle">
+  <button>Знайти</button>
+  <button>Очистити</button>
   <div class="filter-item">
     <label for="">Термін</label>
     <input type="text">
@@ -25,5 +25,50 @@
   </div>
 </div>
 <div class="tasks-table">
-
+  <table>
+    <thead>
+      <tr>
+        <th>Завдання</th>
+        <th>Термін</th>
+        <th>Виконавець</th>
+        <th>Автор</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of tasksArr">
+        <td>{{item.task}}</td>
+        <td>{{item.date}}</td>
+        <td>{{item.preformer}}</td>
+        <td>{{item.author}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<!-- Pop-up for adding tasks -->
+<div class="add-task-pop-up" *ngIf="popUpToggle">
+  <div class="back-close" (click)="onPopUpToggle()"></div>
+  <div class="pop-up-container">
+    <h2>Створити завдання</h2>
+    <form>
+      <div class="pop-up-input">
+        <label for="title">Title</label>
+        <input type="text" id="title">
+      </div>
+      <div class="pop-up-input">
+        <label for="describe">Describe</label>
+        <textarea id="describe" cols="30" rows="10"></textarea>
+      </div>
+      <div class="pop-up-input">
+        <label for="date">Date</label>
+        <input type="text" id="date">
+      </div>
+      <div class="pop-up-input">
+        <label for="preformer">Performer</label>
+        <input type="text" id="preformer">
+      </div>
+      <div class="btn-submit">
+        <button disabled>Додати</button>
+      </div>
+    </form>
+  </div>
 </div>
