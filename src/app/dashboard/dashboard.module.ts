@@ -12,8 +12,9 @@ import { MoneyComponent } from './components/money/money.component';
 import { GoodsComponent } from './components/goods/goods.component';
 import { PurchasesComponent } from './components/purchases/purchases.component';
 import { ContractorsComponent } from './components/contractors/contractors.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
-  imports: [CommonModule, RouterModule, DashboardRouterModule],
+  imports: [CommonModule, RouterModule, DashboardRouterModule, ReactiveFormsModule],
   declarations: [
     DashboardContainerComponent,
     HeaderComponent,

@@ -35,10 +35,10 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let item of tasksArr">
-        <td>{{item.task}}</td>
+      <tr *ngFor="let item of tasksArr" (click)="onCellClick(item.id)">
+        <td>{{item.taskTitle}}</td>
         <td>{{item.date}}</td>
-        <td>{{item.preformer}}</td>
+        <td>{{item.performer}}</td>
         <td>{{item.author}}</td>
       </tr>
     </tbody>
@@ -49,25 +49,25 @@
   <div class="back-close" (click)="onPopUpToggle()"></div>
   <div class="pop-up-container">
     <h2>Створити завдання</h2>
-    <form>
+    <form [formGroup]="addTaskForm" novalidate (ngSubmit)="onSubmitAddTaskForm()">
       <div class="pop-up-input">
         <label for="title">Title</label>
-        <input type="text" id="title">
+        <input type="text" id="title" formControlName="title">
       </div>
       <div class="pop-up-input">
         <label for="describe">Describe</label>
-        <textarea id="describe" cols="30" rows="10"></textarea>
+        <textarea id="describe" cols="30" rows="10" formControlName="describe"></textarea>
       </div>
       <div class="pop-up-input">
         <label for="date">Date</label>
-        <input type="text" id="date">
+        <input type="text" id="date" formControlName="date">
       </div>
       <div class="pop-up-input">
         <label for="preformer">Performer</label>
-        <input type="text" id="preformer">
+        <input type="text" id="preformer" formControlName="performer">
       </div>
       <div class="btn-submit">
-        <button disabled>Додати</button>
+        <button [disabled]="addTaskForm.invalid">Додати</button>
       </div>
     </form>
   </div>
