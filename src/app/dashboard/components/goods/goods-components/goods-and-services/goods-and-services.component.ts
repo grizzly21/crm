@@ -1,15 +1,39 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { IGood } from 'src/app/dashboard/common/interfaces/IGood.interface';
 
 @Component({
   selector: 'app-goods-and-services',
   templateUrl: './goods-and-services.component.html',
-  styleUrls: ['./goods-and-services.component.css']
+  styleUrls: [
+    './goods-and-services.component.scss',
+    '../../../../common/styles/panel-general-style.scss',
+  ],
 })
-export class GoodsAndServicesComponent implements OnInit {
+export class GoodsAndServicesComponent {
+  goods: IGood[] = [
+    {
+      id: 'name',
+      type: 'Товар',
+      itemName: 'MacBook Pro 13 2019 Space Grey',
+      code: 43008,
+      article: '3213',
+      unitOfMeasurement: 'шт',
+      purchasePrice: 500,
+      salePrice: 650
+    },
+    {
+      id: 'name',
+      type: 'Товар',
+      itemName: 'MacBook Pro 13 2019 Space Grey',
+      code: 43008,
+      article: '3213',
+      unitOfMeasurement: 'шт',
+      purchasePrice: 500,
+      salePrice: 650
+    }
+  ];
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor() {
+    console.log(this.goods)
   }
-
 }

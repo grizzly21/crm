@@ -6,9 +6,10 @@ import { InventoryComponent } from './goods-components/inventory/inventory.compo
 import { MovingComponent } from './goods-components/moving/moving.component';
 import { RemaindersComponent } from './goods-components/remainders/remainders.component';
 import { WrittenOffComponent } from './goods-components/written-off/written-off.component';
+import { GoodsRoutingModule } from './goods-routing.module';
 
 @NgModule({
-  imports: [CommonModule],
+  imports: [CommonModule, GoodsRoutingModule],
   declarations: [
     GoodsComponent,
     GoodsAndServicesComponent,

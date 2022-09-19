@@ -1,9 +1,12 @@
 <div class="goods-sub-nav">
   <ul>
-    <li>Товари і послуги</li>
-    <li>Списання</li>
-    <li>Інвернтаризація</li>
-    <li>Переміщення</li>
-    <li>Залишки</li>
+    <li routerLink="goods-and-services" routerLinkActive="goods-sub-nav-active">Товари і послуги</li>
+    <li routerLink="written-off" routerLinkActive="goods-sub-nav-active">Списання</li>
+    <li routerLink="inventory" routerLinkActive="goods-sub-nav-active">Інвернтаризація</li>
+    <li routerLink="moving" routerLinkActive="goods-sub-nav-active">Переміщення</li>
+    <li routerLink="remainders" routerLinkActive="goods-sub-nav-active">Залишки</li>
   </ul>
+</div>
+<div class="goods-container">
+  <router-outlet></router-outlet>
 </div>

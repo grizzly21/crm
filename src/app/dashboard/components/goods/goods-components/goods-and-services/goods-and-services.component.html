@@ -1,3 +1,42 @@
-<p>
-  goods-and-services works!
-</p>
+<div class="control-panel">
+  <h3 class="control-panel-title">Товари і послуги</h3>
+  <button class="control-panel-btn">Товар</button>
+  <button class="control-panel-btn">Послуга</button>
+  <button class="control-panel-btn">Комплект</button>
+  <button class="control-panel-btn">Фільтр</button>
+  <input class="control-panel-search" type="search" placeholder="Назва, код або артикул">
+</div>
+<br>
+<div class="goods-services-content">
+  <div class="dropdown-category-list">
+    There will be category list.
+  </div>
+  <div class="items-table">
+    <table>
+      <thead>
+        <tr>
+          <th class="checkbox"><input type="checkbox" name="checkbox"></th>
+          <th>Тип</th>
+          <th class="item-name">Назва</th>
+          <th>Код</th>
+          <th>Артикул</th>
+          <th>Од. вим.</th>
+          <th>Закупівельна ціна</th>
+          <th>Ціна продажу</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let good of goods">
+          <td class="checkbox"><input type="checkbox" name="checkbox-1"></td>
+          <td>{{good.type}}</td>
+          <td class="item-name">{{good.itemName}}</td>
+          <td>{{good.code}}</td>
+          <td>{{good.article}}</td>
+          <td>{{good.unitOfMeasurement}}</td>
+          <td>{{good.purchasePrice}}</td>
+          <td>{{good.salePrice}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

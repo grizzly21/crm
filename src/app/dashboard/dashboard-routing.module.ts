@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from '@angular/router';
 import { ContractorsComponent } from "./components/contractors/contractors.component";
+import { goodsRoutes } from "./components/goods/goods-routing.module";
 import { GoodsComponent } from "./components/goods/goods.component";
 import { IndicatorsComponent } from "./components/indicators/indicators.component";
 import { MoneyComponent } from "./components/money/money.component";
@@ -10,7 +11,7 @@ import { TasksComponent } from "./components/tasks/tasks.component";
 
 export const dashboardRoutes: Routes = [
   { path: '', redirectTo: 'indicators', pathMatch: 'full'},
-  { path: 'goods', component: GoodsComponent},
+  { path: 'goods', component: GoodsComponent, children: goodsRoutes},
   { path: 'indicators', component: IndicatorsComponent},
   { path: 'sales', component: SalesComponent},
   { path: 'money', component: MoneyComponent},

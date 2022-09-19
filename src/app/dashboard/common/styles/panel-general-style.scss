@@ -1,0 +1,32 @@
+// GENERAL STYLES FOR CHILDREN COMPONENTS
+.control-panel{
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+
+  &-btn {
+    border: none;
+    padding: 8px 10px;
+    border-radius: 5px;
+    color: white;
+    background-color: #000;
+
+    &:hover{
+      cursor: pointer;
+      background-color: lighten(#000, 35%);
+    }
+  }
+
+  &-search {
+    width: 230px;
+    height: 35px;
+    padding-left: 8px;
+    padding-right: 8px;
+    border-radius: 5px;
+    border: 1px solid grey;
+    outline: none;
+  }
+
+}

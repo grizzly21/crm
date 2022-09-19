@@ -9,12 +9,19 @@ import { IndicatorsComponent } from './components/indicators/indicators.componen
 import { SalesComponent } from './components/sales/sales.component';
 import { TasksComponent } from './components/tasks/tasks.component';
 import { MoneyComponent } from './components/money/money.component';
-import { GoodsComponent } from './components/goods/goods.component';
 import { PurchasesComponent } from './components/purchases/purchases.component';
 import { ContractorsComponent } from './components/contractors/contractors.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { GoodsModule } from './components/goods/goods.module';
 @NgModule({
-  imports: [CommonModule, RouterModule, DashboardRouterModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    RouterModule,
+    DashboardRouterModule,
+    ReactiveFormsModule,
+
+    GoodsModule
+  ],
   declarations: [
     DashboardContainerComponent,
     HeaderComponent,
@@ -25,7 +32,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SalesComponent,
     TasksComponent,
     MoneyComponent,
-    GoodsComponent,
     PurchasesComponent,
     ContractorsComponent,
   ],
