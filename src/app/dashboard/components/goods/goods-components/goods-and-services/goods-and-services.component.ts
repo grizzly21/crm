@@ -7,9 +7,13 @@ import { IGood } from 'src/app/dashboard/common/interfaces/IGood.interface';
   styleUrls: [
     './goods-and-services.component.scss',
     '../../../../common/styles/panel-general-style.scss',
+    '../../../../common/styles/pop-up-style.scss',
   ],
 })
 export class GoodsAndServicesComponent {
+
+  goodsPopUpToggle = true;
+
   goods: IGood[] = [
     {
       id: 'name',
@@ -36,4 +40,5 @@ export class GoodsAndServicesComponent {
   constructor() {
     console.log(this.goods)
   }
+
 }

@@ -1,0 +1,61 @@
+<form>
+  <div class="dropdown-widget">
+    <h3>Зображення</h3>
+    <div class="input-group">
+      <input type="file" accept="image/*" />
+    </div>
+  </div>
+
+  <div class="dropdown-widget">
+    <h3>Загальні данні</h3>
+    <div class="input-group">
+      <input type="text" placeholder="Назва товару" />
+    </div>
+    <div class="input-group">
+      <textarea
+        name=""
+        id=""
+        cols="30"
+        rows="10"
+        placeholder="Опис товару"
+      ></textarea>
+    </div>
+    <div class="input-group">
+      <input type="number" placeholder="Код" />
+    </div>
+    <div class="input-group">
+      <input type="number" placeholder="Артикул" />
+    </div>
+    <div class="input-group">
+      <input type="number" placeholder="Закупівельна ціна" />
+    </div>
+    <div class="input-group">
+      <input type="number" placeholder="Ціна продажу" />
+    </div>
+  </div>
+
+  <div class="dropdown-widget">
+    <h3>Доступ</h3>
+
+    <div class="input-group">
+      <label for="access">Співробітник</label>
+      <select id="access">
+        <option>Admin</option>
+        <option>Staff</option>
+        <option>Saler 1</option>
+      </select>
+    </div>
+
+    <div class="input-group">
+      <label for="departament">Відділ</label>
+      <select id="departament">
+        <option>Основний</option>
+      </select>
+    </div>
+
+    <div class="input-group">
+      <label for="all_access">Загальний доступ</label>
+      <input type="checkbox" id="all_access" />
+    </div>
+  </div>
+</form>
