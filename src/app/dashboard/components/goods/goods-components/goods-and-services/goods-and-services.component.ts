@@ -18,6 +18,7 @@ export class GoodsAndServicesComponent {
     {
       id: 'name',
       type: 'Товар',
+      image: 'macbook',
       itemName: 'MacBook Pro 13 2019 Space Grey',
       code: 43008,
       article: '3213',
@@ -28,6 +29,7 @@ export class GoodsAndServicesComponent {
     {
       id: 'name',
       type: 'Товар',
+      image: 'macbook',
       itemName: 'MacBook Pro 13 2019 Space Grey',
       code: 43008,
       article: '3213',

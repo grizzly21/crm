@@ -20,9 +20,8 @@
     z-index: 999;
   }
 
-  .pop-up-content{
+  .pop-up-content {
     width: 100%;
-    height: 800px;
     max-width: 650px;
     padding: 20px;
     background-color: #fff;
@@ -35,13 +34,43 @@
     text-align: center;
     margin-top: 10px;
   }
+}
 
-  form {
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  .action-button{
+    display: flex;
+    gap: 20px;
+
+    button{
+      margin: 0;
+    }
+
+    .btn-cancel {
+      background-color: darkred;
+    }
+  }
+
+  .dropdown-widget {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     width: 100%;
-    padding: 40px;
+    background-color: #e2dfdf;
+    padding: 15px;
+    border-radius: 5px;
+    transition: all 1.6s ease;
 
-    .pop-up-input {
-      margin-bottom: 15px;
+    h3{
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .input-group{
       width: 100%;
       display: flex;
       flex-direction: column;
@@ -52,35 +81,56 @@
       }
 
       input,
-      textarea {
-        padding-left: 8px;
-        padding-right: 8px;
+      textarea, select {
+        padding: 8px;
         border-radius: 5px;
         border: 1px solid grey;
         outline: none;
       }
+
       textarea {
         resize: none;
-        padding-top: 8px;
       }
 
       input {
         height: 35px;
       }
+
+      input[type='checkbox']{
+        height: 20px;
+      }
+
+      input[type='file']{
+        height: auto;
+        padding: 0;
+        border: none;
+      }
     }
 
-    button {
-      margin-top: 40px;
-      width: 100%;
-      border: none;
-      height: 35px;
-      border-radius: 5px;
-      color: white;
-      background-color: #000;
+    // common styles
 
-      &:disabled {
-        background-color: lighten(#000, 30%);
+    .inline{
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+
+      select{
+        width: 50%;
       }
+    }
+  }
+
+  button {
+    margin-top: 40px;
+    width: 100%;
+    border: none;
+    height: 35px;
+    border-radius: 5px;
+    color: white;
+    background-color: #000;
+
+    &:disabled {
+      background-color: lighten(#000, 30%);
     }
   }
 }

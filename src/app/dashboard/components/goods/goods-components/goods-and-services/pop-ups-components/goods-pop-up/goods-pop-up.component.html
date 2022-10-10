@@ -1,43 +1,59 @@
 <form>
+
+  <div class="action-button">
+    <button class="btn-cancel">
+      Відмінити
+    </button>
+    <button class="btn-save">
+      Зберегти
+    </button>
+  </div>
+
   <div class="dropdown-widget">
     <h3>Зображення</h3>
     <div class="input-group">
-      <input type="file" accept="image/*" />
+      <input type="file" accept="image/*"/>
     </div>
   </div>
 
   <div class="dropdown-widget">
     <h3>Загальні данні</h3>
     <div class="input-group">
-      <input type="text" placeholder="Назва товару" />
+      <input type="text" placeholder="Назва товару"/>
+    </div>
+    <div class="input-group">
+      <select name="" id="">
+        <option selected disabled hidden>Оберіть групу товару</option>
+        <option value="laptop">Laptop</option>
+        <option value="phone">Phone</option>
+      </select>
     </div>
     <div class="input-group">
       <textarea
         name=""
-        id=""
         cols="30"
         rows="10"
         placeholder="Опис товару"
       ></textarea>
     </div>
     <div class="input-group">
-      <input type="number" placeholder="Код" />
+      <input type="number" placeholder="Код"/>
     </div>
     <div class="input-group">
-      <input type="number" placeholder="Артикул" />
+      <input type="number" placeholder="Артикул"/>
     </div>
     <div class="input-group">
-      <input type="number" placeholder="Закупівельна ціна" />
+      <input type="number" placeholder="Закупівельна ціна"/>
     </div>
     <div class="input-group">
-      <input type="number" placeholder="Ціна продажу" />
+      <input type="number" placeholder="Ціна продажу"/>
     </div>
   </div>
 
   <div class="dropdown-widget">
     <h3>Доступ</h3>
 
-    <div class="input-group">
+    <div class="input-group inline">
       <label for="access">Співробітник</label>
       <select id="access">
         <option>Admin</option>
@@ -46,16 +62,16 @@
       </select>
     </div>
 
-    <div class="input-group">
+    <div class="input-group inline">
       <label for="departament">Відділ</label>
       <select id="departament">
         <option>Основний</option>
       </select>
     </div>
 
-    <div class="input-group">
+    <div class="input-group inline">
       <label for="all_access">Загальний доступ</label>
-      <input type="checkbox" id="all_access" />
+      <input type="checkbox" id="all_access"/>
     </div>
   </div>
 </form>

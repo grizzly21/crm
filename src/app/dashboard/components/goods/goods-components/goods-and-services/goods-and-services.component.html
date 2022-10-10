@@ -28,6 +28,7 @@
       <thead>
         <tr>
           <th class="checkbox"><input type="checkbox" name="checkbox"></th>
+          <th>Зображення</th>
           <th>Тип</th>
           <th class="item-name">Назва</th>
           <th>Код</th>
@@ -40,6 +41,7 @@
       <tbody>
         <tr *ngFor="let good of goods">
           <td class="checkbox"><input type="checkbox"></td>
+          <td>image</td>
           <td>{{good.type}}</td>
           <td class="item-name">{{good.itemName}}</td>
           <td>{{good.code}}</td>
