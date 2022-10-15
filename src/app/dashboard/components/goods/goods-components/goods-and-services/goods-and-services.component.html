@@ -47,14 +47,14 @@
           <td>{{good.code}}</td>
           <td>{{good.article}}</td>
           <td>{{good.unitOfMeasurement}}</td>
-          <td>{{good.purchasePrice}}</td>
-          <td>{{good.salePrice}}</td>
+          <td>{{good.purchasePrice | currency}}</td>
+          <td>{{good.salePrice | currency }}</td>
         </tr>
       </tbody>
     </table>
   </div>
 </div>
-<!-- Pop up window for adding the goods, service & complects -->
+<!-- Pop up window for adding the goods, service & kits-->
 <div class="pop-up-container" *ngIf="goodsPopUpToggle">
   <div
     class="pop-up-close-block"
@@ -62,10 +62,6 @@
     routerLink="../"
     ></div>
   <div class="pop-up-content">
-    <!--<div class="top-panel">
-      <button class="save-btn">Save</button>
-      <button class="cancel-btn">Cancel</button>
-    </div>-->
     <router-outlet></router-outlet>
   </div>
 </div>

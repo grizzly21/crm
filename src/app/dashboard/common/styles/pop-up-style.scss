@@ -48,6 +48,10 @@ form {
 
     button{
       margin: 0;
+
+      &:hover{
+        cursor: pointer;
+      }
     }
 
     .btn-cancel {

@@ -1,10 +1,13 @@
-<form>
+<form [formGroup]="addNewGoodForm" novalidate (ngSubmit)="onAddGood()">
 
   <div class="action-button">
-    <button class="btn-cancel">
-      Відмінити
+    <button
+      type="button"
+      class="btn-cancel"
+      (click)="onCancel()"
+    >Відмінити
     </button>
-    <button class="btn-save">
+    <button class="btn-save" [disabled]="addNewGoodForm.invalid">
       Зберегти
     </button>
   </div>
@@ -12,41 +15,59 @@
   <div class="dropdown-widget">
     <h3>Зображення</h3>
     <div class="input-group">
-      <input type="file" accept="image/*"/>
+      <input
+        type="file"
+        accept="image/*"
+        formControlName="goodImage"/>
     </div>
   </div>
 
   <div class="dropdown-widget">
     <h3>Загальні данні</h3>
     <div class="input-group">
-      <input type="text" placeholder="Назва товару"/>
+      <input
+        type="text"
+        placeholder="Назва товару"
+        formControlName="itemName"/>
     </div>
     <div class="input-group">
-      <select name="" id="">
-        <option selected disabled hidden>Оберіть групу товару</option>
+      <select formControlName="itemGroup">
+        <option selected disabled>Оберіть групу товару</option>
         <option value="laptop">Laptop</option>
         <option value="phone">Phone</option>
       </select>
     </div>
     <div class="input-group">
       <textarea
-        name=""
         cols="30"
-        rows="10"
+        rows="5"
         placeholder="Опис товару"
+        formControlName="description"
       ></textarea>
     </div>
     <div class="input-group">
-      <input type="number" placeholder="Код"/>
+      <input
+        type="number"
+        placeholder="Код"
+        formControlName="code"/>
     </div>
     <div class="input-group">
-      <input type="number" placeholder="Артикул"/>
+      <input
+        type="number"
+        placeholder="Артикул"
+        formControlName="article"/>
     </div>
     <div class="input-group">
-      <input type="number" placeholder="Закупівельна ціна"/>
+      <input
+        type="number"
+        placeholder="Закупівельна ціна"
+        formControlName="purchasePrice"/>
     </div>
     <div class="input-group">
-      <input type="number" placeholder="Ціна продажу"/>
+      <input
+        type="number"
+        placeholder="Ціна продажу"
+        formControlName="salePrice"/>
     </div>
   </div>
 
@@ -55,7 +76,7 @@
 
     <div class="input-group inline">
       <label for="access">Співробітник</label>
-      <select id="access">
+      <select id="access" formControlName="access">
         <option>Admin</option>
         <option>Staff</option>
         <option>Saler 1</option>
@@ -64,14 +85,18 @@
 
     <div class="input-group inline">
       <label for="departament">Відділ</label>
-      <select id="departament">
+      <select id="departament" formControlName="departament">
         <option>Основний</option>
       </select>
     </div>
 
     <div class="input-group inline">
-      <label for="all_access">Загальний доступ</label>
-      <input type="checkbox" id="all_access"/>
+      <label for="general_access">Загальний доступ</label>
+      <input
+        type="checkbox"
+        id="general_access"
+        formControlName="generalAccess"
+        [defaultChecked]="false"/>
     </div>
   </div>
 </form>

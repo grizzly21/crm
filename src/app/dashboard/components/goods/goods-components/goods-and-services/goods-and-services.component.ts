@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import { IGood } from 'src/app/dashboard/common/interfaces/IGood.interface';
+import {GoodsService} from "../../services/goods.service";
+import {GoodsCommunicationService} from "../../services/goods-communication.service";
 
 @Component({
   selector: 'app-goods-and-services',
@@ -10,37 +12,54 @@ import { IGood } from 'src/app/dashboard/common/interfaces/IGood.interface';
     '../../../../common/styles/pop-up-style.scss',
   ],
 })
-export class GoodsAndServicesComponent {
+export class GoodsAndServicesComponent implements OnInit, OnDestroy{
+  goodsPopUpToggle = false;
 
-  goodsPopUpToggle = true;
+  goods: IGood[] = [];
 
-  goods: IGood[] = [
-    {
-      id: 'name',
-      type: 'Товар',
-      image: 'macbook',
-      itemName: 'MacBook Pro 13 2019 Space Grey',
-      code: 43008,
-      article: '3213',
-      unitOfMeasurement: 'шт',
-      purchasePrice: 500,
-      salePrice: 650
-    },
-    {
-      id: 'name',
-      type: 'Товар',
-      image: 'macbook',
-      itemName: 'MacBook Pro 13 2019 Space Grey',
-      code: 43008,
-      article: '3213',
-      unitOfMeasurement: 'шт',
-      purchasePrice: 500,
-      salePrice: 650
-    }
-  ];
-
-  constructor() {
-    console.log(this.goods)
+  constructor(
+    private goodsService: GoodsService,
+    private communicationService: GoodsCommunicationService
+  ) {
   }
 
+  ngOnInit(){
+    this.getAllItems();
+
+    // communication with pop-up
+    this.communicationService.messageSubject.subscribe(
+      next => {
+        this.goodsPopUpToggle = next;
+      },
+      error => {
+        console.log(error);
+      }
+    )
+
+    this.communicationService.updateItemTable.subscribe(
+      next => {
+        this.getAllItems();
+      },
+      error => {
+        console.log(error);
+      }
+    )
+  }
+
+  getAllItems(){
+    this.goodsService.getAllGoods().subscribe(
+      (next) => {
+        this.goods = next;
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+  }
+
+
+  ngOnDestroy() {
+    this.communicationService.updateItemTable.unsubscribe();
+    this.communicationService.messageSubject.unsubscribe();
+  }
 }
