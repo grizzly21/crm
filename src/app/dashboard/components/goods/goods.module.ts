@@ -11,6 +11,10 @@ import {
   GoodsPopUpComponent
 } from "./goods-components/goods-and-services/pop-ups-components/goods-pop-up/goods-pop-up.component";
 import {ReactiveFormsModule} from "@angular/forms";
+import {TransformTablePipe} from "../../common/pipes/transform-table.pipe";
+import {
+  ServicePopUpComponent
+} from "./goods-components/goods-and-services/pop-ups-components/service-pop-up/service-pop-up.component";
 
 @NgModule({
   imports: [
@@ -25,7 +29,10 @@ import {ReactiveFormsModule} from "@angular/forms";
     MovingComponent,
     RemaindersComponent,
     WrittenOffComponent,
-    GoodsPopUpComponent
+    GoodsPopUpComponent,
+    ServicePopUpComponent,
+
+    TransformTablePipe
   ]
 })
 export class GoodsModule {

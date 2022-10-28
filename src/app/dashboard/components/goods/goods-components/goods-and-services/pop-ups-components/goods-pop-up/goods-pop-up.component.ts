@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import {Component} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {IGood} from "../../../../../../common/interfaces/IGood.interface";
 import {GoodsService} from "../../../../services/goods.service";
@@ -22,7 +22,7 @@ export class GoodsPopUpComponent {
     purchasePrice: new FormControl(null, Validators.required),
     salePrice: new FormControl(null, Validators.required),
     access: new FormControl(null, Validators.required),
-    departament: new FormControl(null, Validators.required),
+    department: new FormControl(null, Validators.required),
     generalAccess: new FormControl(null)
   })
 

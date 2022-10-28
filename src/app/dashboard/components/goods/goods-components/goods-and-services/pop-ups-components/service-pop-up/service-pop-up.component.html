@@ -1,3 +1,83 @@
-<p>
-  service-pop-up works!
-</p>
+<form
+  [formGroup]="addNewServiceForm"
+  novalidate
+  (ngSubmit)="onAddService()" >
+
+  <div class="action-button">
+    <button
+      type="button"
+      class="btn-cancel"
+      (click)="onCancel()"
+    >Відмінити
+    </button>
+    <button class="btn-save" [disabled]="addNewServiceForm.invalid">
+      Зберегти
+    </button>
+  </div>
+
+  <div class="dropdown-widget">
+    <h3>Загальні данні</h3>
+    <div class="input-group">
+      <input
+        type="text"
+        placeholder="Назва послуги"
+        formControlName="itemName"/>
+    </div>
+    <div class="input-group">
+      <select formControlName="itemGroup">
+        <option value="" selected>Оберіть групу послуги</option>
+        <option value="laptop">Laptop</option>
+        <option value="phone">Phone</option>
+      </select>
+    </div>
+    <div class="input-group">
+      <textarea
+        cols="30"
+        rows="5"
+        placeholder="Опис послуги"
+        formControlName="description"
+      ></textarea>
+    </div>
+    <div class="input-group">
+      <input
+        type="number"
+        placeholder="Код"
+        formControlName="code"/>
+    </div>
+    <div class="input-group">
+      <input
+        type="number"
+        placeholder="Ціна продажу"
+        formControlName="salePrice"/>
+    </div>
+  </div>
+
+  <div class="dropdown-widget">
+    <h3>Доступ</h3>
+
+    <div class="input-group inline">
+      <label for="access">Співробітник</label>
+      <select id="access" formControlName="access">
+        <option selected>Admin</option>
+        <option>Staff</option>
+        <option>Saler 1</option>
+      </select>
+    </div>
+
+    <div class="input-group inline">
+      <label for="department">Відділ</label>
+      <select id="department" formControlName="department">
+        <option selected>Основний</option>
+      </select>
+    </div>
+
+    <div class="input-group inline">
+      <label for="general_access">Загальний доступ</label>
+      <input
+        type="checkbox"
+        id="general_access"
+        formControlName="generalAccess"
+        [defaultChecked]="false"/>
+    </div>
+  </div>
+</form>

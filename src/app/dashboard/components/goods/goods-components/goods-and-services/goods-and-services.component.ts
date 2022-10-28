@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import { IGood } from 'src/app/dashboard/common/interfaces/IGood.interface';
 import {GoodsService} from "../../services/goods.service";
 import {GoodsCommunicationService} from "../../services/goods-communication.service";
+import {ITableView} from "../../../../common/interfaces/ITableView.interface";
 
 @Component({
   selector: 'app-goods-and-services',
@@ -15,7 +15,7 @@ import {GoodsCommunicationService} from "../../services/goods-communication.serv
 export class GoodsAndServicesComponent implements OnInit, OnDestroy{
   goodsPopUpToggle = false;
 
-  goods: IGood[] = [];
+  allItems: ITableView[] = [];
 
   constructor(
     private goodsService: GoodsService,
@@ -27,7 +27,7 @@ export class GoodsAndServicesComponent implements OnInit, OnDestroy{
     this.getAllItems();
 
     // communication with pop-up
-    this.communicationService.messageSubject.subscribe(
+    this.communicationService.closePopUp.subscribe(
       next => {
         this.goodsPopUpToggle = next;
       },
@@ -37,29 +37,36 @@ export class GoodsAndServicesComponent implements OnInit, OnDestroy{
     )
 
     this.communicationService.updateItemTable.subscribe(
-      next => {
-        this.getAllItems();
-      },
-      error => {
-        console.log(error);
-      }
+      next => this.getAllItems(),
+      error => console.log(error)
     )
   }
 
   getAllItems(){
+    this.allItems = [];
+
     this.goodsService.getAllGoods().subscribe(
-      (next) => {
-        this.goods = next;
+      (response) => {
+        response.forEach(item => {
+          this.allItems.push(item)
+        })
       },
-      (error) => {
-        console.log(error);
-      }
+      (error) => console.log(error)
+    );
+
+    this.goodsService.getAllServices().subscribe(
+      (response) => {
+        response.forEach(item => {
+          this.allItems.push(item)
+        })
+      },
+      (error) => console.log(error)
     );
   }
 
 
   ngOnDestroy() {
     this.communicationService.updateItemTable.unsubscribe();
-    this.communicationService.messageSubject.unsubscribe();
+    this.communicationService.closePopUp.unsubscribe();
   }
 }

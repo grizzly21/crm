@@ -39,16 +39,16 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let good of goods">
+        <tr *ngFor="let item of allItems">
           <td class="checkbox"><input type="checkbox"></td>
           <td>image</td>
-          <td>{{good.type}}</td>
-          <td class="item-name">{{good.itemName}}</td>
-          <td>{{good.code}}</td>
-          <td>{{good.article}}</td>
-          <td>{{good.unitOfMeasurement}}</td>
-          <td>{{good.purchasePrice | currency}}</td>
-          <td>{{good.salePrice | currency }}</td>
+          <td>{{item.type}}</td>
+          <td class="item-name">{{item.itemName}}</td>
+          <td>{{item.code}}</td>
+          <td>{{item.article}}</td>
+          <td>{{item.unitOfMeasurement}}</td>
+          <td>{{item.purchasePrice | currency}}</td>
+          <td>{{item.salePrice | currency}}</td>
         </tr>
       </tbody>
     </table>
