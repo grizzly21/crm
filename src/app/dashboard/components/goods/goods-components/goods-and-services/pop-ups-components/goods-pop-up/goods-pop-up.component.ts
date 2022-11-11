@@ -1,8 +1,8 @@
 import {Component} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {IGood} from "../../../../../../common/interfaces/IGood.interface";
 import {GoodsService} from "../../../../services/goods.service";
 import {GoodsCommunicationService} from "../../../../services/goods-communication.service";
+import {ITableView} from "../../../../../../common/interfaces/ITableView.interface";
 
 @Component({
   selector: 'app-goods-pop-up',
@@ -33,8 +33,8 @@ export class GoodsPopUpComponent {
   }
 
   onAddGood() {
-    let value: IGood = {
-      ...this.addNewGoodForm.value as unknown as IGood,
+    let value: ITableView = {
+      ...this.addNewGoodForm.value as unknown as ITableView,
       unitOfMeasurement: 'шт',
       type: 'Товар'
     };

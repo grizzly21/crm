@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {GoodsService} from "../../../../services/goods.service";
 import {GoodsCommunicationService} from "../../../../services/goods-communication.service";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {IService} from "../../../../../../common/interfaces/IService.interface";
+import {ITableView} from "../../../../../../common/interfaces/ITableView.interface";
 
 @Component({
   selector: 'app-service-pop-up',
@@ -33,8 +33,8 @@ export class ServicePopUpComponent implements OnInit {
   }
 
   onAddService(){
-    let addService: IService = {
-      ...this.addNewServiceForm.value as unknown as IService,
+    let addService: ITableView = {
+      ...this.addNewServiceForm.value as unknown as ITableView,
       type: 'Послуга'
     };
     this.goodService.addNewService(addService).subscribe(

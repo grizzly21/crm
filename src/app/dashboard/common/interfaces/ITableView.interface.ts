@@ -1,7 +1,7 @@
 export interface ITableView{
   id?: string | number;
   type: string; //add before send to server
-  goodImage?: string;
+  goodImage?: string | null;
   itemName: string;
   itemGroup: string;
   description: string;
@@ -11,6 +11,6 @@ export interface ITableView{
   purchasePrice?: number;
   salePrice: number;
   access: string;
-  department: string;
+  department?: string;
   generalAccess?: boolean;
 }

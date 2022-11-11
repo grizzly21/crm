@@ -20,38 +20,42 @@
 </div>
 <br>
 <div class="goods-services-content">
+
+  <!-- Category tree -->
   <div class="dropdown-category-list">
-    There will be category list.
+    <p-tree [value]="categoryList"
+            selectionMode="single"
+            [(selection)]="selectedCategory"
+            (onNodeSelect)="nodeSelect($event)"
+            (onNodeUnselect)="nodeUnselect($event)"
+    ></p-tree>
   </div>
+
+  <!-- Table of all goods and services -->
   <div class="items-table">
-    <table>
-      <thead>
+
+    <p-table
+      [resizableColumns]="true"
+      styleClass="p-datatable-gridlines"
+      [columns]="cols"
+      [value]="!itemsArrayToggle ? allItems : filteredItemsByCategory"
+      [tableStyle]="{'min-width': '50rem'}">
+      <ng-template pTemplate="header" let-columns>
         <tr>
-          <th class="checkbox"><input type="checkbox" name="checkbox"></th>
-          <th>Зображення</th>
-          <th>Тип</th>
-          <th class="item-name">Назва</th>
-          <th>Код</th>
-          <th>Артикул</th>
-          <th>Од. вим.</th>
-          <th>Закупівельна ціна</th>
-          <th>Ціна продажу</th>
+          <th *ngFor="let col of columns" pResizableColumn>
+            {{col.header}}
+          </th>
         </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let item of allItems">
-          <td class="checkbox"><input type="checkbox"></td>
-          <td>image</td>
-          <td>{{item.type}}</td>
-          <td class="item-name">{{item.itemName}}</td>
-          <td>{{item.code}}</td>
-          <td>{{item.article}}</td>
-          <td>{{item.unitOfMeasurement}}</td>
-          <td>{{item.purchasePrice | currency}}</td>
-          <td>{{item.salePrice | currency}}</td>
+      </ng-template>
+      <ng-template pTemplate="body" let-rowData let-columns="columns">
+        <tr>
+          <td *ngFor="let col of columns">
+            {{rowData[col.field]}}
+          </td>
         </tr>
-      </tbody>
-    </table>
+      </ng-template>
+    </p-table>
+
   </div>
 </div>
 <!-- Pop up window for adding the goods, service & kits-->

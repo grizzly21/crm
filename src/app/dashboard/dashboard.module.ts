@@ -13,6 +13,7 @@ import {PurchasesComponent} from './components/purchases/purchases.component';
 import {ContractorsComponent} from './components/contractors/contractors.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {GoodsModule} from './components/goods/goods.module';
+import {MessagesModule} from "primeng/messages";
 
 @NgModule({
   imports: [
@@ -20,7 +21,8 @@ import {GoodsModule} from './components/goods/goods.module';
     RouterModule,
     DashboardRouterModule,
     ReactiveFormsModule,
-    GoodsModule
+    GoodsModule,
+    MessagesModule
   ],
   declarations: [
     DashboardContainerComponent,
@@ -34,6 +36,8 @@ import {GoodsModule} from './components/goods/goods.module';
     MoneyComponent,
     PurchasesComponent,
     ContractorsComponent,
+  ],
+  exports: [
   ],
   bootstrap: [DashboardContainerComponent]
 })

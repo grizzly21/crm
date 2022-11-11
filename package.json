@@ -11,6 +11,7 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "^14.1.0",
+    "@angular/cdk": "^14.2.6",
     "@angular/common": "^14.1.0",
     "@angular/compiler": "^14.1.0",
     "@angular/core": "^14.1.0",
@@ -21,7 +22,7 @@
     "boxicons": "^2.1.2",
     "nyc": "^15.1.0",
     "primeicons": "^5.0.0",
-    "primeng": "^14.0.0",
+    "primeng": "^14.2.1",
     "run": "^1.4.0",
     "rxjs": "~7.5.0",
     "then": "^0.0.1",

@@ -5,44 +5,20 @@
   height: 80vh;
 
   .dropdown-category-list{
-    background-color: rgb(193, 193, 193);
+
   }
 
   .items-table{
-    background-color: rgb(214, 214, 214);
 
-    table {
-      width: 100%;
-      margin-top: 10px;
-      border-spacing: 0;
+    p-table{
 
-      thead > tr > th {
+      tr > th{
         font-size: 14px;
-        border-bottom: 1px solid #000;
-        text-align: left;
       }
-
-      .checkbox{
-        width: 20px;
-      }
-
-      .item-name{
-        width: 270px;
-      }
-
-      th,
-      td {
-        padding: 8px;
-      }
-
-      tbody > tr {
-        font-size: 13px;
-
-        &:hover {
-          cursor: pointer;
-          background-color: darken($color: #fff, $amount: 10%);
-        }
+      tr > td {
+        font-size: 14px;
       }
     }
+
   }
 }

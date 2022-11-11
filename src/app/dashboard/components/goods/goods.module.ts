@@ -11,17 +11,21 @@ import {
   GoodsPopUpComponent
 } from "./goods-components/goods-and-services/pop-ups-components/goods-pop-up/goods-pop-up.component";
 import {ReactiveFormsModule} from "@angular/forms";
-import {TransformTablePipe} from "../../common/pipes/transform-table.pipe";
 import {
   ServicePopUpComponent
 } from "./goods-components/goods-and-services/pop-ups-components/service-pop-up/service-pop-up.component";
+import {TableModule} from "primeng/table";
+import {TreeModule} from "primeng/tree";
+
 
 @NgModule({
-  imports: [
-    CommonModule,
-    GoodsRoutingModule,
-    ReactiveFormsModule
-  ],
+    imports: [
+        CommonModule,
+        GoodsRoutingModule,
+        ReactiveFormsModule,
+        TableModule,
+        TreeModule,
+    ],
   declarations: [
     GoodsComponent,
     GoodsAndServicesComponent,
@@ -31,8 +35,6 @@ import {
     WrittenOffComponent,
     GoodsPopUpComponent,
     ServicePopUpComponent,
-
-    TransformTablePipe
   ]
 })
 export class GoodsModule {
