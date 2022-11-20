@@ -8,6 +8,7 @@ import { InventoryComponent } from './goods-components/inventory/inventory.compo
 import { MovingComponent } from './goods-components/moving/moving.component';
 import { RemaindersComponent } from './goods-components/remainders/remainders.component';
 import { WrittenOffComponent } from './goods-components/written-off/written-off.component';
+import {PostingComponent} from "./goods-components/posting/posting.component";
 
 export const goodsRoutes: Routes = [
   { path: '', redirectTo: 'goods-and-services', pathMatch: 'full' },
@@ -21,6 +22,7 @@ export const goodsRoutes: Routes = [
     ],
   },
   { path: 'written-off', component: WrittenOffComponent },
+  { path: 'posting', component: PostingComponent},
   { path: 'inventory', component: InventoryComponent },
   { path: 'moving', component: MovingComponent },
   { path: 'remainders', component: RemaindersComponent },

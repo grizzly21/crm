@@ -1,0 +1,19 @@
+.card-gap{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+p-toolbar{
+  margin-bottom: 10px;
+
+  h5{
+    font-size: 1.2rem;
+  }
+
+  button{
+    height: 40px;
+    margin-right: 10px;
+  }
+}
+

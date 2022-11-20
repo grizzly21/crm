@@ -4,13 +4,20 @@
   grid-column-gap: 10px;
   height: 80vh;
 
-  .dropdown-category-list{
-
-  }
 
   .items-table{
 
     p-table{
+
+      .table-caption{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        h5{
+          font-size: 1rem;
+        }
+      }
 
       tr > th{
         font-size: 14px;

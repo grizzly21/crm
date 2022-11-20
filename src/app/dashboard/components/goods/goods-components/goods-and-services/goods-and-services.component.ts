@@ -1,8 +1,9 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {GoodsService} from "../../services/goods.service";
 import {GoodsCommunicationService} from "../../services/goods-communication.service";
 import {ITableView} from "../../../../common/interfaces/ITableView.interface";
 import {MessageService, TreeNode} from "primeng/api";
+import {CategoryService} from "../../../../common/services/category.service";
 
 @Component({
   selector: 'app-goods-and-services',
@@ -13,7 +14,7 @@ import {MessageService, TreeNode} from "primeng/api";
     '../../../../common/styles/pop-up-style.scss',
   ],
 })
-export class GoodsAndServicesComponent implements OnInit, OnDestroy {
+export class GoodsAndServicesComponent implements OnInit {
   //toggles
   goodsPopUpToggle = false;
   itemsArrayToggle = false;
@@ -23,18 +24,21 @@ export class GoodsAndServicesComponent implements OnInit, OnDestroy {
   allItems: ITableView[] = [];
   filteredItemsByCategory: ITableView[] = [];
 
-  categoryList: TreeNode[] = [];
+  selectedProducts!: ITableView[];
   selectedCategory!: TreeNode;
 
   constructor(
     private goodsService: GoodsService,
     private communicationService: GoodsCommunicationService,
-    private messageService: MessageService
+    private messageService: MessageService,
+    public categoryService: CategoryService
   ) {
   }
 
   ngOnInit() {
     this.getAllItems();
+
+    this.categoryService.getCategoryList();
 
     // communication with pop-up
     this.communicationService.closePopUp.subscribe(
@@ -63,14 +67,6 @@ export class GoodsAndServicesComponent implements OnInit, OnDestroy {
       {field: 'salePrice', header: 'Ціна продажу'},
     ];
 
-    this.goodsService.getCategoryList().subscribe(
-      next => this.categoryList = next,
-      err => this.messageService.add({
-        severity:'error',
-        summary:'Помилка',
-        detail:'Помилка завантаження данних'
-      })
-    )
   }
 
   getAllItems() {
@@ -104,26 +100,36 @@ export class GoodsAndServicesComponent implements OnInit, OnDestroy {
 
   }
 
+  getEventValue(event: any): string {
+    return event.target.value;
+  }
+
+  nodeSelectToggle: boolean = false
+
   nodeSelect(event: any) {
-    // this.allItems.forEach(item => {
-    //   console.log(item)
-    //   if(event.node.data === item.itemGroup){
-    //     console.log('here')
-    //     this.filteredItemsByCategory.push(item)
-    //   }
-    // })
-    // console.log(this.filteredItemsByCategory)
-    // this.itemsArrayToggle = true;
+    console.log(event);
+    if(!this.nodeSelectToggle){
+      this.filteredItemsByCategory = []
+      this.allItems.forEach(item => {
+        console.log(item)
+        if(event.node.data === item.itemGroup){
+          console.log('here')
+          this.filteredItemsByCategory.push(item)
+        }
+      })
+      console.log(this.filteredItemsByCategory)
+      this.itemsArrayToggle = true;
+    }else {
+      return;
+    }
+    this.nodeSelectToggle = true;
   }
 
   nodeUnselect(event: any) {
+    this.nodeSelectToggle = false;
+    this.itemsArrayToggle = false;
     // this.filteredItemsByCategory = [];
     // this.itemsArrayToggle = false;
     console.log(event + 'unselected');
-  }
-
-  ngOnDestroy() {
-    this.communicationService.updateItemTable.unsubscribe();
-    this.communicationService.closePopUp.unsubscribe();
   }
 }

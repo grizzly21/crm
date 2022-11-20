@@ -16,16 +16,27 @@ import {
 } from "./goods-components/goods-and-services/pop-ups-components/service-pop-up/service-pop-up.component";
 import {TableModule} from "primeng/table";
 import {TreeModule} from "primeng/tree";
+import {ToolbarModule} from "primeng/toolbar";
+import {RatingModule} from "primeng/rating";
+import {InputTextModule} from "primeng/inputtext";
+import { PostingComponent } from './goods-components/posting/posting.component';
+import {ButtonModule} from "primeng/button";
+import {RippleModule} from "primeng/ripple";
 
 
 @NgModule({
-    imports: [
-        CommonModule,
-        GoodsRoutingModule,
-        ReactiveFormsModule,
-        TableModule,
-        TreeModule,
-    ],
+  imports: [
+    CommonModule,
+    GoodsRoutingModule,
+    ReactiveFormsModule,
+    TableModule,
+    TreeModule,
+    ToolbarModule,
+    RatingModule,
+    InputTextModule,
+    ButtonModule,
+    RippleModule,
+  ],
   declarations: [
     GoodsComponent,
     GoodsAndServicesComponent,
@@ -35,6 +46,7 @@ import {TreeModule} from "primeng/tree";
     WrittenOffComponent,
     GoodsPopUpComponent,
     ServicePopUpComponent,
+    PostingComponent,
   ]
 })
 export class GoodsModule {

@@ -14,6 +14,7 @@ import {ContractorsComponent} from './components/contractors/contractors.compone
 import {ReactiveFormsModule} from '@angular/forms';
 import {GoodsModule} from './components/goods/goods.module';
 import {MessagesModule} from "primeng/messages";
+import {CategoryService} from "./common/services/category.service";
 
 @NgModule({
   imports: [
@@ -37,7 +38,8 @@ import {MessagesModule} from "primeng/messages";
     PurchasesComponent,
     ContractorsComponent,
   ],
-  exports: [
+  providers: [
+    CategoryService
   ],
   bootstrap: [DashboardContainerComponent]
 })
